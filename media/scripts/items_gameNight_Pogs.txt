@@ -1,0 +1,19 @@
+module Base
+{
+    	item Pogs
+    {
+        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
+        DisplayName = Pog,
+        Icon = PlayingCards1/deck,
+        WorldStaticModel = Pogs,
+    }
+
+	item Slammers
+    {
+        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
+        DisplayName = Pog,
+        Icon = PlayingCards1/deck,
+        WorldStaticModel = Slammers,
+    }
+
+}

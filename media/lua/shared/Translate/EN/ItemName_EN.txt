@@ -1,0 +1,12 @@
+ItemName_EN = {
+	ItemName_Base.AssaultRifle = "Diemaco C7",
+	ItemName_Base.556Clip = "C7 Magazine",
+	ItemName_Base.Pistol = "Browning Hi-Power",
+	ItemName_Base.9mmClip = "Hi-Power Magazine",
+	ItemName_Base.Jacket_ArmyCamoGreen = "Combat Uniform Jacket",
+	ItemName_Base.Trousers_CamoGreen = "Combat Uniform Pants",
+	ItemName_Base.Trousers_CamoUrban = "Combat Uniform Pants",
+	ItemName_Base.Jacket_CoatArmy = "Combat Uniform Jacket",
+	ItemName_Base.Hat_Army = "M1 Combat Helmet",
+	ItemName_Base.BaitFish = "Atlantic Menhaden",
+}
