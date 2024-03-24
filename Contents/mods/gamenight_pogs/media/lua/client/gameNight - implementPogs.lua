@@ -12,22 +12,35 @@ pogs.series = {
 	["Pog_WorldTour_"]=30,
 }
 pogs.items = {}
-for seriesID,numberOf in pairs(pogs.series) do for i=1, numberOf do table.insert(pogs.items, seriesID..i) end end
-applyItemDetails.addDeck("Pogs", pogs.items)
+pogs.altNames = {}
+for seriesID,numberOf in pairs(pogs.series) do
+	for i=1, numberOf do
+		local pogID = seriesID..i
+		pogs.altNames[pogID] = "Pogs"
+		table.insert(pogs.items, pogID)
+	end
+end
+applyItemDetails.addDeck("Pogs", pogs.items, pogs.altNames)
 
 
 local slammers = {}
-slammers.series = {	["Pog_Series1_Slammer_"]=29, ["Pog_Series2_Slammers"]=142}
+slammers.series = {	["Pog_Series1_Slammer_"]=28, ["Pog_Series2_Slammers"]=142}
 slammers.items = {}
-for seriesID,numberOf in pairs(slammers.series) do for i=1, numberOf do table.insert(slammers.items, seriesID..i) end end
-applyItemDetails.addDeck("Slammers", slammers.items)
+slammers.altNames = {}
+for seriesID,numberOf in pairs(slammers.series) do
+	for i=1, numberOf do
+		local slammerID = seriesID..i
+		slammers.altNames[slammerID] = "Slammers"
+		table.insert(slammers.items, slammerID)
+	end
+end
+applyItemDetails.addDeck("Slammers", slammers.items, slammers.altNames)
 
 
 local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
 
-gamePieceAndBoardHandler.registerSpecial("Base.Pogs", { onDraw = "onPogDraw", })
-gamePieceAndBoardHandler.registerSpecial("Base.Slammers", { onDraw = "onPogDraw", })
-
+gamePieceAndBoardHandler.registerSpecial("Base.Pogs", { category = "GamePiece", onDraw = "onPogDraw" })
+gamePieceAndBoardHandler.registerSpecial("Base.Slammers", { category = "GamePiece", onDraw = "onPogDraw", actions = { slamPogs=true }, shiftAction = "slamPogs" })
 
 local deckActionHandler = require "gameNight - deckActionHandler"
 
@@ -40,41 +53,8 @@ function deckActionHandler.onPogDraw(deckItem)
 	gamePieceAndBoardHandler.setModDataValue(deckItem, "gameNight_rotation", state)
 end
 
--- Pog Slam
 
--- On slam
--- deal all cards in deck in random distance and direction around origin point of deck
--- flip cards
-
---local slam = context:addOptionOnTop(getText("IGUI_slamPog"), item, deckActionHandler.dealCards, playerObj)
-
-
-
---function gamePieceContext.addInventoryItemContext(playerID, context, items)
-    --local playerObj = getSpecificPlayer(playerID)
-
-    --for _, v in ipairs(items) do
-
-        -----@type InventoryItem
-        --local item = v
-
-        --if not instanceof(v, "InventoryItem") then
-       
-            --item = v.items[1]
-        --end
-
-        --local deckStates, flippedStates = deckActionHandler.getDeckStates(item)
-        --if deckStates then
-
-            --local flip = context:addOptionOnTop(getText("IGUI_slamPogs"), item, deckActionHandler.slamPogs, playerObj)
-            --flip.iconTexture = gamePieceContext.gameNightContextMenuIcon.flip
-             
-            --end
-        --break
-    --end
---end
-
-function deckActionHandler.slamPogs(deckItem, player, n, x, y)
+function gamePieceAndBoardHandler.slamPogs(deckItem, player, n, x, y)
 	local worldItem, container = deckItem:getWorldItem(), deckItem:getContainer()
 	local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
 
