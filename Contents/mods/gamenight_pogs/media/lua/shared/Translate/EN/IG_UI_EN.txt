@@ -1,5 +1,7 @@
 IGUI_EN = {
 
+    IGUI_slamPogs = "SLAM!",
+
     IGUI_Pogs = "Pog",
     IGUI_Slammers = "Slammer",
 

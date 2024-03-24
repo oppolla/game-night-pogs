@@ -55,12 +55,13 @@ end
 
 
 function gamePieceAndBoardHandler.slamPogs(deckItem, player, n, x, y)
-	local worldItem, container = deckItem:getWorldItem(), deckItem:getContainer()
-	local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
+	--local worldItem, container = deckItem:getWorldItem(), deckItem:getContainer()
+	--local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
 
     ---@type IsoGridSquare
-    local sq = (worldItem and worldItem:getSquare()) or (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
-	
+    --local sq = (worldItem and worldItem:getSquare()) or (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
+
+	--[[
     -- deckActionHandler._drawCards(n, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z}, container=container })
 	local deckSize = #deckActionHandler.getDeckStates(deckItem)
 	for i = 1, deckSize do
@@ -71,4 +72,5 @@ function gamePieceAndBoardHandler.slamPogs(deckItem, player, n, x, y)
 
 		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z}, container=container })
 	end
+	--]]
 end
