@@ -1,5 +1,4 @@
 version=1
-id=3194918731
 title=Game Night: Pogs
 description=Pogs are back... in POG form.
 tags=Items

@@ -1,5 +1,5 @@
 name=Game Night - Pogs
 id=gamenight_pogs
-description= Pogs are back... in POG form
+description=Pogs are back... in POG form
 poster=poster.png
 require=gamenight
