@@ -7,7 +7,7 @@ module Base
         scale = 0.5,
     }
 
- model Slammers
+    model Slammers
     {
         mesh = WorldItems/Button,
         texture = Item_Slammers/SlammerTexture,
