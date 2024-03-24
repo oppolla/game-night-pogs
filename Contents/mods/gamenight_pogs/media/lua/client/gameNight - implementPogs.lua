@@ -609,9 +609,3 @@ function deckActionHandler.slamPogs(deckItem, player, n, x, y)
 		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z}, container=container })
 	end
 end
-
-function deckActionHandler.dealCards(deckItem, player, n, x, y)
-    gamePieceAndBoardHandler.pickupAndPlaceGamePiece(player, deckItem, {deckActionHandler._dealCards, deckItem, player, n, x, y}, deckActionHandler.handleDetails)
-end
-
-function deckActionHandler.dealCard(deckItem, player, x, y) deckActionHandler.dealCards(deckItem, player, 1, x, y) end

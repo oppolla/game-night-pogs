@@ -11,7 +11,7 @@ module Base
     {
         mesh = WorldItems/Button,
         texture = Item_Slammers/SlammerTexture,
-        scale = 0.5,
+        scale = 0.52,
     }
 
 

@@ -1,6 +1,6 @@
 module Base
 {
-    	item Pogs
+    item Pogs
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
         DisplayName = Pog,
