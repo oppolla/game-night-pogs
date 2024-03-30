@@ -1,4 +1,4 @@
-local applyItemDetails = require "gameNight - applyItemDetails"
+local deckActionHandler = require "gameNight - deckActionHandler"
 
 local pogs = {}
 pogs.series = {
@@ -20,7 +20,7 @@ for seriesID,numberOf in pairs(pogs.series) do
 		table.insert(pogs.items, pogID)
 	end
 end
-applyItemDetails.addDeck("Pogs", pogs.items, pogs.altNames)
+deckActionHandler.addDeck("Pogs", pogs.items, pogs.altNames)
 
 
 local slammers = {}
@@ -34,7 +34,7 @@ for seriesID,numberOf in pairs(slammers.series) do
 		table.insert(slammers.items, slammerID)
 	end
 end
-applyItemDetails.addDeck("Slammers", slammers.items, slammers.altNames)
+deckActionHandler.addDeck("Slammers", slammers.items, slammers.altNames)
 
 
 local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
@@ -42,7 +42,6 @@ local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
 gamePieceAndBoardHandler.registerSpecial("Base.Pogs", { category = "GamePiece", onDraw = "onPogDraw" })
 gamePieceAndBoardHandler.registerSpecial("Base.Slammers", { category = "GamePiece", onDraw = "onPogDraw", actions = { slamPogs=true }, shiftAction = "slamPogs" })
 
-local deckActionHandler = require "gameNight - deckActionHandler"
 
 function deckActionHandler.onPogDraw(deckItem)
 
