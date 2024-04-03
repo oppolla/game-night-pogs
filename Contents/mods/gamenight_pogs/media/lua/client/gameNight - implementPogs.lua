@@ -50,7 +50,7 @@ gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
 	onDraw = "onPogDraw",
 	actions = { slamPogs=true },
 	shiftAction = "slamPogs",
-	alternateStackRendering = {rgb = {0.27, 0.28, 0.29}}, -- sides=12
+	alternateStackRendering = {rgb = {0.37, 0.38, 0.39}}, -- sides=12
 })
 
 
