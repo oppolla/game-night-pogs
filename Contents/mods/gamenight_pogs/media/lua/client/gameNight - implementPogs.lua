@@ -42,10 +42,16 @@ local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
 gamePieceAndBoardHandler.registerSpecial("Base.Pogs", {
 	category = "GamePiece",
 	onDraw = "onPogDraw",
-	alternateStackRendering = {rgb = {0.17, 0.18, 0.19}}, -- sides=12
+	alternateStackRendering = {rgb = {0.57, 0.58, 0.59}}, -- sides=12
 })
 
-gamePieceAndBoardHandler.registerSpecial("Base.Slammers", { category = "GamePiece", onDraw = "onPogDraw", actions = { slamPogs=true }, shiftAction = "slamPogs" })
+gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
+	category = "GamePiece",
+	onDraw = "onPogDraw",
+	actions = { slamPogs=true },
+	shiftAction = "slamPogs",
+	alternateStackRendering = {rgb = {0.27, 0.28, 0.29}}, -- sides=12
+})
 
 
 
