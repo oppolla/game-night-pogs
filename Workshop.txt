@@ -1,5 +1,11 @@
 version=1
 title=Game Night: Pogs
-description=Pogs are back... in POG form.
-tags=Items
-visibility=unlisted
+description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
+description=[h3]Pogs are back... in POG form.[/h3]
+description=
+description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
+description=
+description=
+description=[h3]Copyright 2024 Oppolla and Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account(s) named Oppolla and Chuckleberry Finn.[/h3]
+tags=Build 41;Multiplayer;Pop Culture;Silly/Fun
+visibility=public
