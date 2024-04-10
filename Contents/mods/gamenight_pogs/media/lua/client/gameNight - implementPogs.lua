@@ -108,28 +108,40 @@ function applyItemDetails.applyPogDetails(item)
 end
 
 
+---@param player IsoPlayer|IsoGameCharacter
 function gamePieceAndBoardHandler.slamPogs_isValid(deckItem, player, n, x, y)
-	local sq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
-	if sq then return true end
-	return false
+	local worldItem = deckItem:getWorldItem()
+	if not worldItem then return false end
+
+	local gameWindowSq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
+	if not gameWindowSq then return false end
+
+	local slammer = player:getInventory():getItemFromType("Slammers")
+	if not slammer then return false end
+
+	return (worldItem and gameWindowSq and slammer) and true or false
 end
-function gamePieceAndBoardHandler.slamPogs(deckItem, player, n, x, y)
-	local worldItem, container = deckItem:getWorldItem(), deckItem:getContainer()
+
+
+function gamePieceAndBoardHandler.slamPogs(deckItem, player)
+	local worldItem = deckItem:getWorldItem()
 	local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
 
     ---@type IsoGridSquare
     local sq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
+	local slammer = player:getInventory():getItemFromType("Slammers")
 
-	--[[
-    -- deckActionHandler._drawCards(n, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z}, container=container })
 	local deckSize = #deckActionHandler.getDeckStates(deckItem)
 	for i = 1, deckSize do
-		local travelX = ZombRand(0, 100) / 100
-		local travelY = ZombRand(0, 100) / 100
-		x = x or worldItem and (worldItem:getWorldPosX()-worldItem:getX() + travelX) or 0
-		y = y or worldItem and (worldItem:getWorldPosY()-worldItem:getY() + travelY) or 0
+		local travelX = ZombRandFloat(0.25,0.75)
+		local travelY = ZombRandFloat(0.25,0.75)
+		local x = worldItem and (worldItem:getWorldPosX()-worldItem:getX() + travelX) or 0
+		local y = worldItem and (worldItem:getWorldPosY()-worldItem:getY() + travelY) or 0
 
-		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z}, container=container })
+		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z} })
 	end
-	--]]
+
+	local slammerX = ZombRandFloat(0.33,0.66)
+	local slammerY = ZombRandFloat(0.33,0.66)
+	deckActionHandler._drawCards(1, slammer, player, { sq=sq, offsets={x=slammerX,y=slammerY,z=z} })
 end
