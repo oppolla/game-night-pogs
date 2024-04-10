@@ -100,6 +100,8 @@ function applyItemDetails.applyPogDetails(item)
 			---@type IsoGridSquare
 			local worldItemSq = worldItem and worldItem:getSquare()
 			if worldItemSq then worldItemSq:AddWorldInventoryItem(slammerPile, 0, 0, 0) end
+
+			gamePieceAndBoardHandler.refreshInventory(getPlayer())
 		end
 	end
 end
