@@ -1,6 +1,0 @@
-module Base
-{
-
-    recipe Unseal Pogs { PogsPack, Result:Pogs, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenPogPack, Time:50.0, }
-
-}

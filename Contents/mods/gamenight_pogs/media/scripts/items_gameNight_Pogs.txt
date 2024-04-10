@@ -16,12 +16,4 @@ module Base
         WorldStaticModel = Slammers,
     }
 
-    item PogsPack
-    {
-        DisplayCategory = GameBox, Weight = 0.1, Type = Normal,
-        DisplayName = Magic the Gathering Booster Pack,
-
-        Icon = Boxes/PogsPack, WorldStaticModel = PogsPack,
-    }
-
 }
