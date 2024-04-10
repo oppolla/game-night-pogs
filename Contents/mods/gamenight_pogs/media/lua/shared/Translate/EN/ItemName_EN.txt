@@ -1,4 +1,5 @@
 ItemName_EN = {
     ItemName_Base.Pogs = "Pogs"
     ItemName_Base.Slammers = "Slammers"
+    ItemName_Base.PogsPack = "Pogs Pack"
 }

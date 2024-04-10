@@ -40,16 +40,13 @@ deckActionHandler.addDeck("Slammers", slammers.items, slammers.altNames)
 local gamePieceAndBoardHandler = require "gameNight - gamePieceAndBoardHandler"
 
 gamePieceAndBoardHandler.registerSpecial("Base.Pogs", {
-	category = "GamePiece",
-	onDraw = "onPogDraw",
+	category = "GamePiece", onDraw = "onPogDraw",
 	alternateStackRendering = {func="DrawTextureRoundFace", rgb = {0.57, 0.58, 0.59}}, -- sides=12
 })
 
 gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
-	category = "GamePiece",
-	onDraw = "onPogDraw",
-	actions = { slamPogs=true },
-	shiftAction = "slamPogs",
+	category = "GamePiece", onDraw = "onPogDraw",
+	actions = { slamPogs=true }, shiftAction = "slamPogs",
 	alternateStackRendering = {func="DrawTextureRoundFace", depth = 1.2, rgb = {0.37, 0.38, 0.39}}, -- sides=12
 })
 

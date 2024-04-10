@@ -1,7 +1,6 @@
 module Base
 {
 
-    /*recipe Unseal Box { mtgStarterKit, Result:mtgCards, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenKitMTG, Time:50.0, }*/
-    /*recipe Unseal Booster { mtgBoosterPack, Result:mtgCards, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenBoosterMTG, Time:50.0, }*/
+    recipe Unseal Pogs { PogsPack, Result:Pogs, CanBeDoneFromFloor:true, OnCreate:Recipe.GameNight.OpenPogPack, Time:50.0, }
 
 }
