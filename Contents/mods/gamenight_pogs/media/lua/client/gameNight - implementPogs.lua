@@ -87,7 +87,7 @@ function applyItemDetails.applyPogDetails(item)
 
 		local pieces = applyItemDetails.applyFromPool(item, ZombRand(10)+1)
 
-		local slammerCount = ZombRand(math.floor(pieces/3))+1
+		local slammerCount = ZombRand(math.floor(#pieces/3))+1
 		local slammerPile = InventoryItemFactory.CreateItem("Base.Slammers")
 
 		if slammerPile then
