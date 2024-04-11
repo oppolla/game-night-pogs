@@ -124,7 +124,10 @@ function deckActionHandler.slamPogs_isValid(deckItem, player, n, x, y)
 	local slammer = player:getInventory():getItemFromType("Slammers")
 	if not slammer then return false end
 
-	return (worldItem and gameWindowSq and slammer) and true or false
+	local deckSize, flippedStates = #deckActionHandler.getDeckStates(deckItem)
+	if not deckSize or #deckSize <= 1 then return false end
+
+	return (worldItem and gameWindowSq and slammer and deckSize and #deckSize>1) and true or false
 end
 
 
