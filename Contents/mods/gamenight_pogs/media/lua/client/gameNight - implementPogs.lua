@@ -53,11 +53,16 @@ gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
 })
 
 
-function deckActionHandler.onPogDraw(deckItem)
+function deckActionHandler.onPogDraw(deckItem, oldDeck)
 	local current = deckItem:getModData()["gameNight_rotation"] or 0
 	local angle = ZombRand(0,360)
 	local state = (current+angle) % 360
 	gamePieceAndBoardHandler.setModDataValue(deckItem, "gameNight_rotation", state)
+
+	if deckItem ~= oldDeck then
+		local deckSize, flippedStates = deckActionHandler.getDeckStates(deckItem)
+		for i=1, #deckSize do deckItem:getModData()["gameNight_cardFlipped"][i] = (ZombRand(2)>0) end
+	end
 end
 
 
@@ -131,7 +136,7 @@ function deckActionHandler.slamPogs(deckItem, player)
     local sq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
 	local slammer = player:getInventory():getItemFromType("Slammers")
 
-	local deckSize = #deckActionHandler.getDeckStates(deckItem)
+	local deckSize, flippedStates = #deckActionHandler.getDeckStates(deckItem)
 	for i = 1, deckSize do
 		local travelX = ZombRandFloat(0.25,0.75)
 		local travelY = ZombRandFloat(0.25,0.75)
