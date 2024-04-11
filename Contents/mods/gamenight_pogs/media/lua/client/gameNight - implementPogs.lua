@@ -111,15 +111,12 @@ end
 ---@param player IsoPlayer|IsoGameCharacter
 function deckActionHandler.slamPogs_isValid(deckItem, player, n, x, y)
 	local worldItem = deckItem:getWorldItem()
-	print("worldItem:", worldItem)
 	if not worldItem then return false end
 
 	local gameWindowSq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
-	print("gameWindowSq:", gameWindowSq)
 	if not gameWindowSq then return false end
 
 	local slammer = player:getInventory():getItemFromType("Slammers")
-	print("slammer:", slammer)
 	if not slammer then return false end
 
 	return (worldItem and gameWindowSq and slammer) and true or false
