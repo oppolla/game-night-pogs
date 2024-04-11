@@ -109,21 +109,24 @@ end
 
 
 ---@param player IsoPlayer|IsoGameCharacter
-function gamePieceAndBoardHandler.slamPogs_isValid(deckItem, player, n, x, y)
+function deckActionHandler.slamPogs_isValid(deckItem, player, n, x, y)
 	local worldItem = deckItem:getWorldItem()
+	print("worldItem:", worldItem)
 	if not worldItem then return false end
 
 	local gameWindowSq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
+	print("gameWindowSq:", gameWindowSq)
 	if not gameWindowSq then return false end
 
 	local slammer = player:getInventory():getItemFromType("Slammers")
+	print("slammer:", slammer)
 	if not slammer then return false end
 
 	return (worldItem and gameWindowSq and slammer) and true or false
 end
 
 
-function gamePieceAndBoardHandler.slamPogs(deckItem, player)
+function deckActionHandler.slamPogs(deckItem, player)
 	local worldItem = deckItem:getWorldItem()
 	local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
 
@@ -135,10 +138,7 @@ function gamePieceAndBoardHandler.slamPogs(deckItem, player)
 	for i = 1, deckSize do
 		local travelX = ZombRandFloat(0.25,0.75)
 		local travelY = ZombRandFloat(0.25,0.75)
-		local x = worldItem and (worldItem:getWorldPosX()-worldItem:getX() + travelX) or 0
-		local y = worldItem and (worldItem:getWorldPosY()-worldItem:getY() + travelY) or 0
-
-		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=x,y=y,z=z} })
+		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=travelX,y=travelY,z=z} })
 	end
 
 	local slammerX = ZombRandFloat(0.33,0.66)
