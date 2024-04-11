@@ -4,7 +4,7 @@ module Base
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
         DisplayName = Pogs,
-        Icon = PlayingCards1/deck,
+        Icon = Pogs/deck,
         WorldStaticModel = Pogs,
     }
 
@@ -12,7 +12,7 @@ module Base
     {
         DisplayCategory = Deck, Weight = 0.01, Type = Normal,
         DisplayName = Slammers,
-        Icon = PlayingCards1/deck,
+        Icon = Slammers/deck,
         WorldStaticModel = Slammers,
     }
 
