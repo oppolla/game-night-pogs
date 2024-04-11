@@ -124,18 +124,18 @@ function deckActionHandler.slamPogs_isValid(deckItem, player, n, x, y)
 	local slammer = player:getInventory():getItemFromType("Slammers")
 	if not slammer then return false end
 
-	local deckSize, flippedStates = #deckActionHandler.getDeckStates(deckItem)
-	if not deckSize or #deckSize <= 1 then return false end
+	local deck, flippedStates = deckActionHandler.getDeckStates(deckItem)
+	if not deck or #deck <= 1 then return false end
 
-	return (worldItem and gameWindowSq and slammer and deckSize and #deckSize>1) and true or false
+	return (worldItem and gameWindowSq and slammer and deck and #deck>1) and true or false
 end
 
 
 function deckActionHandler.slamPogs(deckItem, player)
 	local slammer = player:getInventory():getItemFromType("Slammers")
 
-	local deckSize, flippedStates = #deckActionHandler.getDeckStates(deckItem)
-	for i = 1, deckSize do
+	local deck, flippedStates = deckActionHandler.getDeckStates(deckItem)
+	for i = 1, deck do
 		local travelX = ZombRandFloat(0.25,0.75)
 		local travelY = ZombRandFloat(0.25,0.75)
 		deckActionHandler.dealCards(deckItem, player, 1, travelX, travelY)
