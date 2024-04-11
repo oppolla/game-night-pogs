@@ -129,21 +129,16 @@ end
 
 
 function deckActionHandler.slamPogs(deckItem, player)
-	local worldItem = deckItem:getWorldItem()
-	local z = worldItem and (worldItem:getWorldPosZ()-worldItem:getZ()) or 0
-
-    ---@type IsoGridSquare
-    local sq = (gameNightWindow and gameNightWindow.instance and gameNightWindow.instance.square)
 	local slammer = player:getInventory():getItemFromType("Slammers")
 
 	local deckSize, flippedStates = #deckActionHandler.getDeckStates(deckItem)
 	for i = 1, deckSize do
 		local travelX = ZombRandFloat(0.25,0.75)
 		local travelY = ZombRandFloat(0.25,0.75)
-		deckActionHandler._drawCards(1, deckItem, player, { sq=sq, offsets={x=travelX,y=travelY,z=z} })
+		deckActionHandler.dealCards(deckItem, player, 1, travelX, travelY)
 	end
 
 	local slammerX = ZombRandFloat(0.33,0.66)
 	local slammerY = ZombRandFloat(0.33,0.66)
-	deckActionHandler._drawCards(1, slammer, player, { sq=sq, offsets={x=slammerX,y=slammerY,z=z} })
+	deckActionHandler.dealCards(slammer, player, 1, slammerX, slammerY)
 end
