@@ -42,7 +42,7 @@ deckActionHandler.addDeck("Slammers", slammers.items, slammers.altNames)
 
 gamePieceAndBoardHandler.registerSpecial("Base.Pogs", {
 	category = "GamePiece", onDraw = "onPogDraw", applyCards = "applyPogDetails",
-	actions = { examineCard=true, slamPogs=true }, shiftAction = "slamPogs",
+	actions = { examineCard=true, slamPogs=true },
 	alternateStackRendering = {func="DrawTextureRoundFace", rgb = {0.57, 0.58, 0.59}}, -- sides=12
 })
 
@@ -134,11 +134,10 @@ end
 function deckActionHandler.slamPogs(deckItem, player)
 	local slammer = player and player:getInventory():getItemFromType("Slammers")
 	local deck, flippedStates = deckActionHandler.getDeckStates(deckItem)
-	local travelX = ZombRandFloat(0.25,0.75)
-	local travelY = ZombRandFloat(0.25,0.75)
+
 	for i = 1, #deck do
-		travelX = travelX + ZombRandFloat(-0.01,0.01)
-		travelY = travelY + ZombRandFloat(-0.01,0.01)
+		local travelX = ZombRandFloat(0.25,0.75)
+		local travelY = ZombRandFloat(0.25,0.75)
 		deckActionHandler.dealCards(deckItem, player, 1, travelX, travelY)
 	end
 
