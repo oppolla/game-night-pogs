@@ -132,12 +132,13 @@ end
 
 
 function deckActionHandler.slamPogs(deckItem, player)
-	local slammer = player:getInventory():getItemFromType("Slammers")
-
+	local slammer = player and player:getInventory():getItemFromType("Slammers")
 	local deck, flippedStates = deckActionHandler.getDeckStates(deckItem)
-	for i = 1, deck do
-		local travelX = ZombRandFloat(0.25,0.75)
-		local travelY = ZombRandFloat(0.25,0.75)
+	local travelX = ZombRandFloat(0.25,0.75)
+	local travelY = ZombRandFloat(0.25,0.75)
+	for i = 1, #deck do
+		travelX = travelX + ZombRandFloat(-0.01,0.01)
+		travelY = travelY + ZombRandFloat(-0.01,0.01)
 		deckActionHandler.dealCards(deckItem, player, 1, travelX, travelY)
 	end
 
