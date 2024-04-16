@@ -4,6 +4,8 @@ title=Game Night: Pogs
 description=[h2]Add-On for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3058279917]GameNight[/url].[/h2]
 description=[h3]Pogs are back... in POG form.[/h3]
 description=
+description=The hottest round collectables of 1993 is back! Find Pogs, play for keeps with your friends, ruin your friendship, become a Pog Champion. All this and more await you!
+description=
 description=[url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png[/img][/url]
 description=
 description=[url=https://github.com/Chuckleberry-Finn/game-night][img]https://raw.githubusercontent.com/Chuckleberry-Finn/game-night/main/images/addOnGuideBanner.png[/img][/url]
