@@ -43,13 +43,13 @@ deckActionHandler.addDeck("Slammers", slammers.items, slammers.altNames)
 gamePieceAndBoardHandler.registerSpecial("Base.Pogs", {
 	category = "GamePiece", onDraw = "onPogDraw", applyCards = "applyPogDetails",
 	alternateStackRendering = {func="DrawTextureRoundFace", rgb = {0.57, 0.58, 0.59}}, -- sides=12
-	actions = { examineCard=true, slamPogs=true }, textureSize = {125,125},
+	actions = { examine=true, slamPogs=true }, textureSize = {125,125},
 })
 
 gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
 	category = "GamePiece", onDraw = "onPogDraw", applyCards = "applySlammerDetails",
 	alternateStackRendering = {func="DrawTextureRoundFace", depth = 1.2, rgb = {0.37, 0.38, 0.39}}, -- sides=12
-	actions = { examineCard=true }, textureSize = {125,125},
+	actions = { examine=true }, textureSize = {125,125},
 })
 
 
