@@ -14,6 +14,7 @@ module Base
         DisplayName = Slammers,
         Icon = Slammers/deck,
         WorldStaticModel = Slammers,
+        Tooltip = Tooltip_Slammers,
     }
 
 }

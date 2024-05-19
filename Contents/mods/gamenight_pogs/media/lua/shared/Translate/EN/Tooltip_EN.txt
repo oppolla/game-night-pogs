@@ -1,0 +1,3 @@
+Tooltip_EN = {
+    Tooltip_Slammers = "Have a slammer in your inventory in order to use it.<br>Right-Click Pogs to SLAM!",
+}
