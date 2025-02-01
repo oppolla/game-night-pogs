@@ -1,0 +1,20 @@
+module Base
+{
+    item Pogs
+    {
+        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
+        DisplayName = Pogs,
+        Icon = Pogs/deck,
+        WorldStaticModel = Pogs,
+    }
+
+	item Slammers
+    {
+        DisplayCategory = Deck, Weight = 0.01, Type = Normal,
+        DisplayName = Slammers,
+        Icon = Slammers/deck,
+        WorldStaticModel = Slammers,
+        Tooltip = Tooltip_Slammers,
+    }
+
+}

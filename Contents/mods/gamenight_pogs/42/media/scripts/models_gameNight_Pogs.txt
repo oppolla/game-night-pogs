@@ -1,0 +1,18 @@
+module Base
+{
+    model Pogs
+    {
+        mesh = WorldItems/Button,
+        texture = Item_Pogs/deckTexture,
+        scale = 0.5,
+    }
+
+    model Slammers
+    {
+        mesh = WorldItems/Button,
+        texture = Item_Slammers/deckTexture,
+        scale = 0.52,
+    }
+
+    model PogsPack { mesh = WorldItems/cardpack, texture = Boxes/PogsPack_ground, scale = 0.024, }
+}
