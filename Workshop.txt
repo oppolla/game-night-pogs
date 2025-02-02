@@ -11,5 +11,5 @@ description=
 description=[url=https://github.com/Chuckleberry-Finn/game-night][img]https://raw.githubusercontent.com/Chuckleberry-Finn/game-night/main/images/addOnGuideBanner.png[/img][/url]
 description=
 description=[h3]Copyright 2024 Oppolla and Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account(s) named Oppolla and Chuckleberry Finn.[/h3]
-tags=Build 41;Multiplayer;Pop Culture;Silly/Fun
+tags=Build 41;Build 42;Multiplayer;Pop Culture;Silly/Fun
 visibility=public
