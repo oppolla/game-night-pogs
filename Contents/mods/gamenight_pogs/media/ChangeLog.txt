@@ -1,7 +1,0 @@
-[ 4/4/24 - TCG+Volumetric ]
-- Updated to match base mod changes to support TCG+Volumetric features.
-[ ------ ]
-
-[ 5/18/24 ]
-- Tweaks and underlying updates in preparation for new Add-On.
-[ ------ ]
