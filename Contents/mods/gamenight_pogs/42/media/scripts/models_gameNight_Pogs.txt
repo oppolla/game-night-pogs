@@ -14,5 +14,4 @@ module Base
         scale = 0.52,
     }
 
-    model PogsPack { mesh = WorldItems/cardpack, texture = Boxes/PogsPack_ground, scale = 0.024, }
 }

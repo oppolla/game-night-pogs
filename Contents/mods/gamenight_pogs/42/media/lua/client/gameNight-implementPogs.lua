@@ -1,6 +1,6 @@
-local applyItemDetails = require "gameNight - applyItemDetails"
+local applyItemDetails = require("gameNight-applyItemDetails.lua")
 local deckActionHandler = applyItemDetails.deckActionHandler
-local gamePieceAndBoardHandler = applyItemDetails.gamePieceAndBoardHandler
+local gamePieceHandler = applyItemDetails.gamePieceHandler
 
 
 local pogs = {}
@@ -40,13 +40,13 @@ end
 deckActionHandler.addDeck("Slammers", slammers.items, slammers.altNames)
 
 
-gamePieceAndBoardHandler.registerSpecial("Base.Pogs", {
+gamePieceHandler.registerSpecial("Base.Pogs", {
 	category = "GamePiece", onDraw = "onPogDraw", applyCards = "applyPogDetails",
 	alternateStackRendering = {func="DrawTextureRoundFace", rgb = {0.57, 0.58, 0.59}}, -- sides=12
 	actions = { examine=true, slamPogs=true }, textureSize = {125,125},
 })
 
-gamePieceAndBoardHandler.registerSpecial("Base.Slammers", {
+gamePieceHandler.registerSpecial("Base.Slammers", {
 	category = "GamePiece", onDraw = "onPogDraw", applyCards = "applySlammerDetails",
 	alternateStackRendering = {func="DrawTextureRoundFace", depth = 1.2, rgb = {0.37, 0.38, 0.39}}, -- sides=12
 	actions = { examine=true }, textureSize = {125,125},
@@ -57,7 +57,7 @@ function deckActionHandler.onPogDraw(deckItem, oldDeck)
 	local current = deckItem:getModData()["gameNight_rotation"] or 0
 	local angle = ZombRand(0,360)
 	local state = (current+angle) % 360
-	gamePieceAndBoardHandler.setModDataValue(deckItem, "gameNight_rotation", state)
+	gamePieceHandler.setModDataValue(deckItem, "gameNight_rotation", state)
 
 	if deckItem ~= oldDeck then
 		local deckSize, flippedStates = deckActionHandler.getDeckStates(deckItem)
@@ -107,7 +107,7 @@ function applyItemDetails.applyPogDetails(item)
 			local worldItemSq = worldItem and worldItem:getSquare()
 			if worldItemSq then worldItemSq:AddWorldInventoryItem(slammerPile, 0, 0, 0) end
 
-			gamePieceAndBoardHandler.refreshInventory(getPlayer())
+			gamePieceHandler.refreshInventory(getPlayer())
 		end
 	end
 end
